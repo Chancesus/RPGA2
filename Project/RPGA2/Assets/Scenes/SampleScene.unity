@@ -3668,6 +3668,7 @@ GameObject:
   - component: {fileID: 317929065}
   - component: {fileID: 317929064}
   - component: {fileID: 317929063}
+  - component: {fileID: 317929067}
   m_Layer: 5
   m_Name: '[Canvas] Dialog'
   m_TagString: Untagged
@@ -3757,6 +3758,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &317929067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317929062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b23c8d71e5d90d44a37c01c83dab29c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _storyText: {fileID: 2126726987}
+  _choiceButtons:
+  - {fileID: 142389397}
+  - {fileID: 485137124}
+  - {fileID: 861058577}
+  - {fileID: 989727642}
+  _dialog: {fileID: 4900000, guid: 6cf48bb6d89824cc69e35b43f9a1aca6, type: 3}
 --- !u!1 &341622331
 GameObject:
   m_ObjectHideFlags: 0
