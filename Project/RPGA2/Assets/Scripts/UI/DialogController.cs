@@ -5,13 +5,16 @@ using TMPro;
 using UnityEngine.UI;
 using Ink.Runtime;
 using System.Text;
+using System;
 
 public class DialogController : MonoBehaviour
 {
     [SerializeField] TMP_Text _storyText;
     [SerializeField] Button[] _choiceButtons;
-    
+    [SerializeField] Animator _animator;
+
     Story _story;
+   
 
     [ContextMenu("Start Dialog")]
     public void StartDialog(TextAsset dialog)
@@ -24,7 +27,11 @@ public class DialogController : MonoBehaviour
     {
        StringBuilder storyTextBuilder = new StringBuilder();
         while (_story.canContinue)
+        {
             storyTextBuilder.AppendLine(_story.Continue());
+            HandleTags();
+        }
+           
 
         _storyText.SetText(storyTextBuilder);
 
@@ -44,6 +51,23 @@ public class DialogController : MonoBehaviour
                 });
             }
         }
+
+        
+    }
+
+     void HandleTags()
+    {
+        foreach (var tag in _story.currentTags)
+        {
+            Debug.Log(tag);
+            if (tag == "OpenDoor")
+                OpenDoor();
+        }
+    }
+
+     void OpenDoor()
+    {
+        _animator.SetTrigger("Open");
     }
 
     // Update is called once per frame
