@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 839adf99600f52e4188378c2bc81fdab, type: 3}
   m_Name: InspectThePanel
   m_EditorClassIdentifier: 
-  Steps: []
+  Steps:
+  - _instructions: 
+    Objective: []
+  - _instructions: 
+    Objective:
+    - _objectiveType: 0
   _name: Check out Panel
   _description: Push the button on the Panel
   _notes: Help Chancesus open the door
