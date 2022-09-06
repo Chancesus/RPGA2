@@ -13,12 +13,10 @@ MonoBehaviour:
   m_Name: InspectThePanel
   m_EditorClassIdentifier: 
   _displayName: Help Chancesus
-  _description: Push the button on the Panel
+  _description: Go check out the panel
   _notes: 
   _sprite: {fileID: 21300000, guid: 020a0c570a9532447925b3db8248fcb4, type: 3}
   Steps:
-  - _instructions: 
-    Objectives: []
-  - _instructions: 
+  - _instruct: Go
     Objectives:
     - _objectiveType: 0

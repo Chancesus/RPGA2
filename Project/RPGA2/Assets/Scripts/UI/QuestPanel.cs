@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using System.Linq;
 using System.Text;
+using System;
 
 public class QuestPanel : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class QuestPanel : MonoBehaviour
     
     [SerializeField] TMP_Text _questNameText;
     [SerializeField] TMP_Text _questDescriptionText;
+
+   
+
     [SerializeField] TMP_Text _currentObjectivesText;
     [SerializeField] Image _questIcon;
     [SerializeField] Step _selectedStep;
@@ -43,5 +47,11 @@ public class QuestPanel : MonoBehaviour
 
         }
         _currentObjectivesText.SetText(builder.ToString());
+    }
+
+    internal void SelectQuest(Quest quest)
+    {
+        _selectedQuest = quest;
+        Bind();
     }
 }

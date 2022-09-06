@@ -20,6 +20,15 @@ public class Quest : ScriptableObject
 
     public Sprite Sprite => _sprite;
 }
+[Serializable]
+public class Step
+{
+    [SerializeField] string _instruct;
+    public string Instructions => _instruct;
+    public List<Objective> Objectives;
+}
+
+
 
 [Serializable]
 public class Objective
