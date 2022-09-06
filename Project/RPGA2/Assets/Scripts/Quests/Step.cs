@@ -5,6 +5,7 @@ using UnityEngine;
 [Serializable]
 public class Step
 {
-    [SerializeField] string _instructions;
-    public List<Objective> Objective;
+    [SerializeField] string _instruct;
+    public string Instructions => _instruct;
+    public List<Objective> Objectives;
 }

@@ -6,11 +6,19 @@ using System;
 [CreateAssetMenu(menuName = "Quest")]
 public class Quest : ScriptableObject
 {
-    public List<Step> Steps;
+    
 
-    [SerializeField] string _name;
+    [SerializeField] string _displayName;
     [SerializeField] string _description;
     [SerializeField] string _notes;
+    [SerializeField] Sprite _sprite;
+
+    public List<Step> Steps;
+
+    public string Description => _description;
+    public string DisplayName => _displayName;
+
+    public Sprite Sprite => _sprite;
 }
 
 [Serializable]
@@ -22,5 +30,10 @@ public class Objective
         Flag,
         Item,
         Kill,
+    }
+
+    public override string ToString()
+    {
+       return _objectiveType.ToString();
     }
 }
