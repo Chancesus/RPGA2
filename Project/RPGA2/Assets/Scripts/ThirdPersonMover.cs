@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class ThirdPersonMover : MonoBehaviour
 {
@@ -9,20 +10,26 @@ public class ThirdPersonMover : MonoBehaviour
 
     Rigidbody _rigidbody;
     Animator _animator;
+    float _mouseMovement;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
+
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
     }
     void Update()
     {
-        float mouseMovement = Input.GetAxis("Mouse X");
-        transform.Rotate(0, mouseMovement * Time.deltaTime * _turnSpeed, 0);
+        _mouseMovement += Input.GetAxis("Mouse X");
     }
 
     void FixedUpdate()
     {
+        transform.Rotate(0, _mouseMovement * Time.deltaTime * _turnSpeed, 0);
+        _mouseMovement = 0f;
+
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         if (Input.GetKey(KeyCode.LeftShift))
