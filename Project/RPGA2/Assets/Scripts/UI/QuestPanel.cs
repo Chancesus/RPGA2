@@ -7,18 +7,15 @@ using System.Linq;
 using System.Text;
 using System;
 
-public class QuestPanel : MonoBehaviour
+public class QuestPanel : ToggleablePanel
 {
     [SerializeField] Quest _selectedQuest;
-    
     [SerializeField] TMP_Text _questNameText;
     [SerializeField] TMP_Text _questDescriptionText;
-
-   
-
     [SerializeField] TMP_Text _currentObjectivesText;
     [SerializeField] Image _questIcon;
     [SerializeField] Step _selectedStep;
+
 
     [ContextMenu("Bind")]
     public void Bind()
@@ -53,5 +50,6 @@ public class QuestPanel : MonoBehaviour
     {
         _selectedQuest = quest;
         Bind();
+        Show();
     }
 }

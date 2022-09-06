@@ -7,43 +7,24 @@ using Ink.Runtime;
 using System.Text;
 using System;
 
-public class DialogController : MonoBehaviour
+public class DialogController : ToggleablePanel
 {
     [SerializeField] TMP_Text _storyText;
     [SerializeField] Button[] _choiceButtons;
     [SerializeField] Animator _animator;
 
     Story _story;
-    CanvasGroup _canvasGroup;
-
-    private void Awake()
-    {
-        _canvasGroup = GetComponent<CanvasGroup>();
-        ToggleCanvasOff();
-    }
-
+   
 
     [ContextMenu("Start Dialog")]
     public void StartDialog(TextAsset dialog)
     {
         _story = new Story(dialog.text);
         RefreshView();
-        ToggleCanvasOn();
+        Show();
     }
 
-    private void ToggleCanvasOn()
-    {
-        _canvasGroup.alpha = 0.5f;
-        _canvasGroup.interactable = true;
-        _canvasGroup.blocksRaycasts = true;
-    }
-
-    private void ToggleCanvasOff()
-    {
-        _canvasGroup.alpha = 0f;
-        _canvasGroup.interactable = false;
-        _canvasGroup.blocksRaycasts = false;
-    }
+   
 
     private void RefreshView()
     {
@@ -59,7 +40,7 @@ public class DialogController : MonoBehaviour
 
         if (_story.currentChoices.Count == 0)
         {
-            ToggleCanvasOff();
+            Hide();
         }
         else
         {
@@ -101,14 +82,5 @@ public class DialogController : MonoBehaviour
             }
               
         }
-    }
-
-    
-   
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
