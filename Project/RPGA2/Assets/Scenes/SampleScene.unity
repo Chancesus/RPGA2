@@ -1576,7 +1576,6 @@ GameObject:
   - component: {fileID: 565706043}
   - component: {fileID: 565706044}
   - component: {fileID: 565706045}
-  - component: {fileID: 565706046}
   m_Layer: 0
   m_Name: Drone  NPC Parent
   m_TagString: Untagged
@@ -1628,19 +1627,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialog: {fileID: 4900000, guid: 9b0e2f1f1aaa6bf4dab9054589f85182, type: 3}
---- !u!114 &565706046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 565706042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6df7beb3d42b43c4a88b5c2209b4cf08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _quest: {fileID: 11400000, guid: ab6d616daced5264e8dc618164def8a7, type: 2}
 --- !u!1 &587014743
 GameObject:
   m_ObjectHideFlags: 0
@@ -71557,8 +71543,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.10841764, y: -0.5073163, z: 0.064150356, w: 0.8525025}
-  m_LocalPosition: {x: 0.08616257, y: 9.864683, z: -8.295448}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.40082252, y: 2.019, z: -9.653213}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -78074,6 +78060,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _questPanel: {fileID: 521012468}
+  _allQuests:
+  - {fileID: 11400000, guid: ab6d616daced5264e8dc618164def8a7, type: 2}
 --- !u!4 &1695378613
 Transform:
   m_ObjectHideFlags: 0

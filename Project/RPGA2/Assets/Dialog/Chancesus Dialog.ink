@@ -9,6 +9,6 @@
 Go to the panel, it's in the back room. #E.PanelBlendCamera
     *Why can't you do that?
         It's against my programming...
-        * *Okay, I'm on it. #E.ReturnToShoulderCamera
-            Thanks! ->END
+        * *Okay, I'm on it. #E.ReturnToShoulderCamera #Q.InspectThePanel 
+            Thanks! ->END 
 - -> END
